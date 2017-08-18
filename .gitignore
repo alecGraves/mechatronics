@@ -1,6 +1,9 @@
 # main executable
 myProgram
 
+# editor
+.vscode
+
 # Cmake stuff
 CMakeCache.txt
 CMakeFiles
