@@ -15,8 +15,12 @@ int main(int argc, char **argv)
     me->SetGrades(startCredit, startGrade, numStart);
     you->SetGrades(startCredit, startGrade, numStart);
 
-    me->AddGrade(4, 'C');
-    me->AddGrade(3, 'F');
+
+    cout << "I have a " << me->GetGPA() << " GPA." << endl;
+    cout << "You have a " << you->GetGPA() << " GPA." << endl;
+
+    me->AddGrade(5, 'C');
+    me->AddGrade(2, 'F');
     you->AddGrade(2, 'B');
     you->AddGrade(4, 'A');
 
