@@ -92,7 +92,7 @@ struct Student
             for(int i(0); i < _numCourses; ++i)
             {
                 //ascii conversion, mult. by weight
-                weightedGrades += (4 - ((int)_grade[i] - 65)) * _credit[i];
+                weightedGrades += std::max(4 - ((int)_grade[i] - 65), 0) * _credit[i];
                 //total hours
                 hours += _credit[i];
             }
