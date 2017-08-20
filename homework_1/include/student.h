@@ -7,6 +7,19 @@ created by Alec Graves
 namespace schoolpeople
 {
 
+const std::map<char, int> Grades({
+    {'A', 4},
+    {'B', 3},
+    {'C', 2},
+    {'D', 1},
+    {'F', 0},
+    {'a', 4},
+    {'b', 3},
+    {'c', 2},
+    {'d', 1},
+    {'f', 0}
+});
+    
 struct Student
 {
     private:
@@ -92,7 +105,7 @@ struct Student
             for(int i(0); i < _numCourses; ++i)
             {
                 //ascii conversion, mult. by weight
-                weightedGrades += std::max(4 - ((int)_grade[i] - 65), 0) * _credit[i];
+                weightedGrades += Grades[_grade[i]] * _credit[i];
                 //total hours
                 hours += _credit[i];
             }
