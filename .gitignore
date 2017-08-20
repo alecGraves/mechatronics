@@ -4,6 +4,11 @@ myProgram
 # editor
 .vscode
 
+# ide
+.vs
+x64
+Debug
+
 # Cmake stuff
 CMakeCache.txt
 CMakeFiles
