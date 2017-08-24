@@ -13,6 +13,8 @@ public:
     int getNumer(){return n;}
     int getDenom(){return d;}
     void print(){printf("%d/%d\n", n, d);}
+    int gcf(int x, int y, int z){ return y&&(z=x%y) ? gcf(y,z,0) : y;}
+    void r(){int f=gcf(n, d, 0); n/=f; d/=f;} //reduce
     Rational() :n(0),d(1) {}
     Rational(int N, int D) :n(N), d(D) {}
 };
