@@ -5,7 +5,7 @@
 using namespace std;
 using namespace numbers;
 
-void TestComplex()
+void PartOne() // Test complex class
 {
     Complex z1(1.4, 2.1), z2(-3.2, 4.6);
 
@@ -61,12 +61,65 @@ struct ComplexArray2D
     }
 };
 
+void PartTwo()
+{
+    Complex c[20];
+    double in = -1.5;
+    double f = .5;
+
+    double m = (f - in) / 19;
+
+    for (int i(0); i < 20; ++i)
+    {
+        c[i].setVals(m * i + in, -1.2);
+    }
+    ofstream fo("data.csv");
+    for (int i(0); i < 20; ++i)
+    {
+        cout << c[i] << '\t' << (c[i]*c[i] + c[i]).getMag() << endl;
+        fo << (c[i]*c[i] + c[i]).getMag() << '\n';
+    }
+    fo.close();
+}
+
+void PartThree()
+{
+    ComplexArray2D c(-1.2, 1.2, -1.5, 0.5, 24, 20);
+
+    ofstream f("data.csv");
+
+    Complex cplx;
+    for (int i(0); i < c.j; ++i)
+    {
+        if (i == 0)
+        {
+            f << ',';
+            for (int j(0); j < c.r; ++j)
+            {
+                cplx = c.array[0][j];
+                cplx = c.array[0][j];
+                f << cplx.getReal() << ',';
+            }
+            f << '\n';
+        }
+        cplx = c.array[i][0];
+        f << cplx.getImag()<<',';
+        for (int j(0); j < c.r; ++j)
+        {
+            cplx = c.array[i][j];
+            cplx = cplx*cplx + cplx;
+            f << cplx.getMag() << ',';
+        }
+        f << '\n';
+    }
+
+    f.close();
+}
+
 int main(int argc, char **argv)
 {
-    TestComplex();
-
-    ComplexArray2D c(-1.2, 1.2, -1.2, 1.2, 5, 5);
-
-    c.Display();
+    // PartOne();
+    PartTwo();
+    // PartThree()
 
 }
