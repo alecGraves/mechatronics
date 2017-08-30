@@ -23,13 +23,20 @@ struct ComplexArray
         array = new *Complex[j];
         for (int i(0); i < j; ++i)
         {
-            array[i] = new Complex[r]
+            array[i] = new Complex[r];
         }
-        double Mr = (rStop - rStart) / (n - 1) //slope for linear mapping reals
-        double Mi = 
-        for (int i(0); i < n; ++i)
+        double Mr = (rStop - rStart) / (r - 1); //slope for linear mapping reals
+        double Mi = (iStop - iStart) / (j - 1) ;//slope for linear mapping imaginaries
+        double imaginary;
+        double real;
+        for (int i(0); i < j; ++i)
         {
-            array[i].setVals() = m * i + start;
+            imaginary = Mi * i + iStart;
+            for (int k(0); k < r; ++k)
+            {
+                real = Mr * k + rStart;
+                array[i][k].setVals(real, imaginary);
+            }
         }
     }
     ~ComplexArray()
