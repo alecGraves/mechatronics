@@ -13,14 +13,27 @@ void TestComplex()
 }
 
 // struct to initialize and store an array of complex nums
-struct ComplexArray
+struct ComplexArray2D
 {
     Complex **array;
     const int r, j; // number of reals and imaginaries in map
-    ComplexArray(double rStart, double rStop, double iStart, double iStop, int RealSamples=20, ImaginarySamples=24) //note: start/stop inclusive
-        : r(RealSamples), i(ImaginarySamples)
+    void Display()
     {
-        array = new *Complex[j];
+        for(int i(0); i < j; ++i)
+        {
+            for (int k(0); k < r; ++k)
+            {
+                cout << array[i][k] << '\t';
+            }
+            cout << endl;
+        }
+    }
+    ComplexArray2D(double iStart, double iStop, double rStart, double rStop, int ImaginarySamples, int RealSamples) //note: start/stop inclusive
+        : r(RealSamples), j(ImaginarySamples)
+        //first index: imaginary
+        //second index: real
+    {
+        array = new Complex*[j];
         for (int i(0); i < j; ++i)
         {
             array[i] = new Complex[r];
@@ -39,9 +52,12 @@ struct ComplexArray
             }
         }
     }
-    ~ComplexArray()
+    ~ComplexArray2D()
     {
-        delete[] array;
+        for (int i(0); i < j; ++i)
+        {
+            delete[] array[i];
+        }
     }
 };
 
@@ -49,11 +65,8 @@ int main(int argc, char **argv)
 {
     TestComplex();
 
-    ComplexArray c(-2, 18, 5);
+    ComplexArray2D c(-1.2, 1.2, -1.2, 1.2, 5, 5);
 
-    for (int i(0); i < c.n; ++i)
-    {
-        cout << c.array[i] << endl;
-    }
+    c.Display();
 
 }
