@@ -87,7 +87,6 @@ public:
 		{
 			return y;
 		}
-		return y && (z = x%y) ? GreatestCommonFactor(y, z, 0) : y;
 	}
 
 	void Reduce() //reduce
