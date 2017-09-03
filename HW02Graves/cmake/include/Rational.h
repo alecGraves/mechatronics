@@ -1,3 +1,9 @@
+/**
+Rational.h
+Contains source for rational class
+
+created by shadySource
+*/
 #include <cstdio>
 class Rational{
 
