@@ -119,7 +119,7 @@ void PartThree()
 int main(int argc, char **argv)
 {
     // PartOne();
-    PartTwo();
-    // PartThree()
+    // PartTwo();
+    PartThree();
 
 }
