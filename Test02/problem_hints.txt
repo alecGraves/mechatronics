@@ -1,0 +1,10 @@
+Symbolic computation
+folding a graph?
+    - contour plot and 3d surface plot
+matrix creation and indexing
+    - turning a matrix blank
+file with for loops
+    - Printing names
+
+Bonus:cellarray, searching strings in cellarray
+    - Histogram with state labels
